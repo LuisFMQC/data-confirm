@@ -1,0 +1,112 @@
+.containerMain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+  max-width: 520px;
+  min-width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  align-items: center;
+  padding: 40px;
+}
+
+.form {
+  width: 100%;
+}
+
+.submitButton {
+  font-family: var(--type-second);
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #f7f7f7;
+  padding: 16px 32px;
+  border-radius: 30px;
+  border: none;
+  text-transform: uppercase;
+  background: linear-gradient(#41bd9a, #47b87a);
+  margin-top: 20px;
+}
+
+.submitButtonLoading {
+  font-family: var(--type-second);
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #f7f7f7;
+  padding: 16px 32px;
+  border-radius: 30px;
+  border: none;
+  text-transform: uppercase;
+  background: #404040;
+  margin-top: 20px;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+.form > p {
+  font-family: var(--type-second);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2E2E2E;
+}
+
+.form p span{
+  font-weight: 600;
+}
+
+.modal {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 40vh auto;
+  max-width: 30%;
+  border-radius: 5px;
+  background: #ededed;
+  padding: 20px 40px;
+}
+
+.modal button {
+  background: linear-gradient(#1d81c4, #2594bd);
+  font-family: var(--type-second);
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 20px;
+}
+
+.modal button:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+.modal h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #121212;
+}
+
+.modal h2 > span {
+  color: #1d81c4;
+}
