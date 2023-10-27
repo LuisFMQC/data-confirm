@@ -8,11 +8,13 @@ import Modal from 'react-modal';
 const FormToken = () => {
   const token = useForm('token');
   const params = new URLSearchParams(window.location.search);
-  const chave = params.get("chave");
-  const idCliente = params.get("idcliente");
+  const param: string | null = params.get("param");
+  console.log(param)
+  // const idCliente = params.get("idcliente");
   const [sent, setSent] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   let el: undefined;
+  const key = 'token123@abc'
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -20,25 +22,24 @@ const FormToken = () => {
     if(token.validate()){
       setLoading(true)
       const requestBody = {
-        chave: chave,
-        idcliente: idCliente?.toString(),
-        token: token.value
-      }
-      console.log(requestBody)
+        param: param,
+        token: Number(token.value)
+        }
+      console.log(JSON.stringify(requestBody))
       const response = await axios({
         url: "https://apikonsistwpp.ngrok.io/registrotoken",
-          method: 'POST',
-          headers: {
-          // "Accept": "*/*",
-          // "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+        method: 'POST',
+        headers: {
+        // "Accept": "*/*",
+        // "User-Agent": "Thunder Client (https://www.thunderclient.com)",
           "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUwLCJ1c2VybmFtZSI6Im5ldXJvbWFzdGVyIiwiaWF0IjoxNjgyNjI0NjU3fQ.k2RgBBdJd58TJXZgyf0wUpGMXKhgXlCixg6242FiASw",
           "Content-Type": "application/json" 
-         },
-          data: JSON.stringify(requestBody)
-      })
-      if(response.status === 201) {
-        setSent(true)
-      };
+        },
+        data: JSON.stringify(requestBody)
+        })
+        if(response.status === 201) {
+          setSent(true)
+        };
     }
   }
 
