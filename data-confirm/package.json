@@ -15,6 +15,7 @@
     "crypto": "^1.0.1",
     "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.2.0",
+    "http": "^0.0.1-security",
     "modal": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
