@@ -9,7 +9,10 @@ const FormToken = () => {
   const token = useForm('token');
   const params = new URLSearchParams(window.location.search);
   const param: string | null = params.get("param");
-  console.log(param)
+  const nome: string | null = params.get("nome");
+  const data: string | null = params.get("data");
+  const hora: string | null = params.get("hora");
+  const senha: string | null = params.get("senha");
   // const idCliente = params.get("idcliente");
   const [sent, setSent] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
@@ -64,6 +67,14 @@ const FormToken = () => {
         <button onClick={() => handleCloseModal()}>Fechar</button>
       </Modal>
       <form onSubmit={handleSubmit} className={styles.form}>
+        <div>
+          <p><span>Paciente: </span>{nome}</p>
+          <p><span>Data: </span>{data?.replace
+          (/-/g, '/')}</p>
+          <p><span>Hora: </span>{hora}</p>
+          <p><span>Senha de autorização: </span>{senha}</p>
+        </div>
+        
         <p>Preencha o <span>TOKEN</span> no campo abaixo:</p>
         <Input 
           label="Token"

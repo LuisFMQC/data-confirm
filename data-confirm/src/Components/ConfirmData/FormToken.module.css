@@ -55,7 +55,11 @@
   transition: 0.3s;
 }
 
-.form > p {
+div {
+  margin-bottom: 60px;
+}
+
+p {
   font-family: var(--type-second);
   font-weight: 400;
   font-size: 18px;
